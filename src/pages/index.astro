@@ -1,11 +1,89 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+const title = "Arthur Larkin — Portfolio";
+const description =
+  "Computer Science student. Football analytics + software. Projects, writing, and contact.";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title={title} description={description}>
+  <section class="hero">
+    <p class="kicker">Computer Science • Data • Football analytics</p>
+    <h1>Building useful software and writing about data-driven sport.</h1>
+    <p class="lead">
+      I’m Arthur — I ship clean web apps, run analyses, and document what I learn.
+      Here are a few things I’m proud of.
+    </p>
+
+    <div class="cta">
+      <a class="btn primary" href="/projects">View projects</a>
+      <a class="btn" href="/blog">Read the blog</a>
+    </div>
+  </section>
+
+  <section class="grid">
+    <article class="card">
+      <h2>Recruitment & match analytics</h2>
+      <p>
+        Models, scouting-style dashboards, and repeatable analysis workflows using Python/SQL.
+      </p>
+      <a href="/projects">See analytics work →</a>
+    </article>
+
+    <article class="card">
+      <h2>Engineering</h2>
+      <p>
+        Astro sites, Django backends, auth/permissions, and automation that saves time.
+      </p>
+      <a href="/projects">See engineering work →</a>
+    </article>
+
+    <article class="card" id="contact">
+      <h2>Contact</h2>
+      <p>
+        For collabs, internships, or writing: drop me a note.
+      </p>
+      <p class="contact">
+        <a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a>
+      </p>
+    </article>
+  </section>
+
+  <style>
+    .hero { padding: 12px 0 28px; }
+    .kicker { color: #475569; margin: 0 0 10px; }
+    h1 { font-size: 44px; line-height: 1.05; margin: 0 0 14px; letter-spacing: -0.03em; }
+    .lead { color: #334155; font-size: 18px; max-width: 62ch; }
+
+    .cta { display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      background: white;
+      font-weight: 600;
+    }
+    .btn.primary { background: #0f172a; color: white; border-color: #0f172a; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 26px;
+    }
+    .card {
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 16px;
+      background: #ffffff;
+    }
+    .card h2 { margin: 0 0 8px; font-size: 18px; }
+    .card p { margin: 0 0 10px; color: #334155; }
+    .contact a { font-weight: 700; }
+
+    @media (max-width: 860px) {
+      .grid { grid-template-columns: 1fr; }
+      h1 { font-size: 36px; }
+    }
+  </style>
 </Layout>
