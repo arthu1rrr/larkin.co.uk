@@ -1,89 +1,50 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const title = "Arthur Larkin — Portfolio";
-const description =
-  "Computer Science student. Football analytics + software. Projects, writing, and contact.";
+
+const title = "Arthur Larkin";
+const description = "";
 ---
 
 <Layout title={title} description={description}>
   <section class="hero">
-    <p class="kicker">Computer Science • Data • Football analytics</p>
-    <h1>Building useful software and writing about data-driven sport.</h1>
+    <nav class="hero-links nav-links">
+		<a href="https://github.com/arthu1rrr">Github</a>
+ 		<a href="https://twitter.com/arthu1rrr">Twitter</a>
+  		<a href="https://instagram.com/arthu1rrr">Instagram</a>
+ 		<a href="https://linkedin.com/in/arthurlarkin">LinkedIn</a>
+	</nav>
     <p class="lead">
-      I’m Arthur — I ship clean web apps, run analyses, and document what I learn.
-      Here are a few things I’m proud of.
+      Arthur Larkin - Cambridge Computer Science - Independent Software Dev - Football Fanatic
     </p>
-
-    <div class="cta">
-      <a class="btn primary" href="/projects">View projects</a>
-      <a class="btn" href="/blog">Read the blog</a>
-    </div>
+	<p class="sub">I love football, games, music (J Hus) and solving problems. I want to use my website to write about my interests and showcase projects which I found interesting, and I hope other people do too. I am a long-suffering Middlesbrough fan (despite being from Birmingham) so I am hoping to produce some projects and writing about MFC. </p>
+	
   </section>
-
   <section class="grid">
-    <article class="card">
-      <h2>Recruitment & match analytics</h2>
-      <p>
-        Models, scouting-style dashboards, and repeatable analysis workflows using Python/SQL.
-      </p>
-      <a href="/projects">See analytics work →</a>
+    <article class="card tile">
+      <h2>Latest writing</h2>
+      <p>Short posts on analysis, modelling, and the craft of building.</p>
+      <a class="btn" href="/blog">Go to blog →</a>
     </article>
 
-    <article class="card">
-      <h2>Engineering</h2>
-      <p>
-        Astro sites, Django backends, auth/permissions, and automation that saves time.
-      </p>
-      <a href="/projects">See engineering work →</a>
-    </article>
-
-    <article class="card" id="contact">
-      <h2>Contact</h2>
-      <p>
-        For collabs, internships, or writing: drop me a note.
-      </p>
-      <p class="contact">
-        <a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a>
-      </p>
-    </article>
+    
   </section>
 
   <style>
-    .hero { padding: 12px 0 28px; }
-    .kicker { color: #475569; margin: 0 0 10px; }
-    h1 { font-size: 44px; line-height: 1.05; margin: 0 0 14px; letter-spacing: -0.03em; }
-    .lead { color: #334155; font-size: 18px; max-width: 62ch; }
-
-    .cta { display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
-    .btn {
-      display: inline-block;
-      padding: 10px 14px;
-      border: 1px solid #cbd5e1;
-      border-radius: 10px;
-      background: white;
-      font-weight: 600;
-    }
-    .btn.primary { background: #0f172a; color: white; border-color: #0f172a; }
-
-    .grid {
-      display: grid;
+    .hero{ padding: 10px 2px 22px; }
+    .lead{ margin-top: 12px; font-size: var(--text-lg); max-width: 64ch; }
+    .cta{ display:flex; flex-wrap:wrap; gap: 10px; margin-top: 18px; }
+	.sub{ margin-top: 6px; color: var(--muted); font-size: var(--text-base);}
+    .grid{
+      margin-top: 18px;
+      display:grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 14px;
-      margin-top: 26px;
     }
-    .card {
-      border: 1px solid #e2e8f0;
-      border-radius: 16px;
-      padding: 16px;
-      background: #ffffff;
-    }
-    .card h2 { margin: 0 0 8px; font-size: 18px; }
-    .card p { margin: 0 0 10px; color: #334155; }
-    .contact a { font-weight: 700; }
+    .tile{ padding: 16px; display:flex; flex-direction:column; gap: 10px; }
+    .tile .btn{ align-self: flex-start; margin-top: 2px; }
 
-    @media (max-width: 860px) {
-      .grid { grid-template-columns: 1fr; }
-      h1 { font-size: 36px; }
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
     }
   </style>
 </Layout>
